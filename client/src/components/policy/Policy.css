@@ -1,0 +1,81 @@
+/* General Layout */
+.policy-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.policy-title {
+    font-size: 36px;
+    color: #1a1a2e;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.policy-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Policy List */
+.policy-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* Policy Item Styling */
+.policy-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.policy-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    border-color: #00adb5;
+}
+
+.policy-item h3 {
+    font-size: 24px;
+    color: #00adb5;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.policy-item p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Hover Effects on the Policy Item */
+.policy-item:hover h3 {
+    color: #ff3b3f;
+}
+
+.policy-item:hover p {
+    color: #444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .policy-section {
+        padding: 20px 10px;
+    }
+    .policy-item h3 {
+        font-size: 20px;
+    }
+    .policy-item p {
+        font-size: 15px;
+    }
+}

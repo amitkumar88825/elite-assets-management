@@ -1,0 +1,83 @@
+/* Sidebar Container */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;  /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(135deg, #1f1f1f, #333);
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;  /* Smooth transition */
+    z-index: 999;  /* Make sure it's on top of other content */
+}
+
+/* Sidebar Open State */
+.sidebar.open {
+    left: 0;  /* When open, sidebar slides into view */
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-menu-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.sidebar-menu-item a:hover {
+    color: #fff;
+}
+
+.sidebar-icon {
+    font-size: 1.5rem;
+}
+
+/* Sidebar Toggle Button */
+.sidebar-toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;  /* Make sure it's on top */
+    transition: color 0.3s ease;
+}
+
+.sidebar-toggle-btn:hover {
+    color: #fff;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;  /* Narrower sidebar for mobile */
+    }
+
+    .sidebar-menu-item a {
+        font-size: 1rem;  /* Smaller font on mobile */
+    }
+
+    .sidebar-icon {
+        font-size: 1.2rem;
+    }
+}

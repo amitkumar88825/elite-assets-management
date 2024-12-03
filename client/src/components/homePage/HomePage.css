@@ -1,0 +1,142 @@
+/* General Page Styles */
+.homepage {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #1f1f1f, #333);
+    /* url('/path/to/your/background-image.jpg') */
+    background-size: cover;
+    color: #fff;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    z-index: 1;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* About Us Section */
+.about {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    color: #1f52e0;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Plans Section */
+.plans {
+    background-color: #f0f0f0;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.plans h2 {
+    color: black;
+    margin-bottom: 30px;
+}
+
+.plan-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.plan-item {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    min-width: 250px;
+}
+
+.plan-item h3 {
+    color: #1f52e0;
+    margin-bottom: 10px;
+}
+
+.plan-item p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Company Policy Section */
+.policy {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.policy h2 {
+    color: #1f52e0;
+    margin-bottom: 20px;
+}
+
+.policy p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Contact Us Section */
+.contact {
+    background-color: #f0f0f0;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #1f52e0;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+.contact strong {
+    color: black;
+}
