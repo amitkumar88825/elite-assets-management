@@ -1,17 +1,24 @@
-// Import the express module
 const express = require('express');
+const bodyParser = require('body-parser');
+const connectDB = require('./config/db');
+const dotenv = require('dotenv');
+// const itemRoutes = require('./routes/');
 
-// Create an express app
+dotenv.config();
+
 const app = express();
 
-// Define a route for the root URL
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
-});
+// Connect to MongoDB
+connectDB();
 
-// Start the server on port 3000
-const port = 5000;
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
-});
+// Middleware to parse JSON bodies
+app.use(bodyParser.json());
 
+// Routes
+// app.use('/api/items', itemRoutes);
+
+// Start the server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
