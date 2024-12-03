@@ -18,7 +18,7 @@ const Signup = () => {
     const navigate = useNavigate();
 
     const cancelUser = () => {
-        // Logic for canceling signup
+        alert("Signup canceled!");
     };
 
     const resetUser = () => {
@@ -43,24 +43,22 @@ const Signup = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:5000/api/user/', user);
-            console.log(46 , response)
-            if (response.status === 200) {
+            if (response.status === 200 || response.status === 201) {
                 alert("Account created successfully!");
-                navigate("/login"); // Redirect to login page after successful signup
+                navigate("/login");
             } else {
                 alert("Something went wrong. Please try again.");
             }
         } catch (error) {
             console.error("Error during signup:", error);
-            alert("Signup failed. Please check your input or try again later.");
+            alert("Signup failed. Please try again later.");
         }
     };
-    
 
     return (
-        <div className="signup-container">
-            <h2 className="signup-title">Create an Account</h2>
-            <form onSubmit={handleSubmit} className="signup-form">
+        <div className="container">
+            <h2 className="title">Create an Account</h2>
+            <form onSubmit={handleSubmit} className="form">
                 <div className="form-group">
                     <label htmlFor="firstName">First Name:</label>
                     <input
@@ -149,9 +147,9 @@ const Signup = () => {
                     ></textarea>
                 </div>
                 <div className="button-group">
-                    <button type="button" className="btn cancel-btn" onClick={cancelUser}>Cancel</button>
-                    <button type="button" className="btn reset-btn" onClick={resetUser}>Reset</button>
-                    <button type="submit" className="btn submit-btn">Submit</button>
+                    <button type="button" className="cancel-btn" onClick={cancelUser}>Cancel</button>
+                    <button type="button" className="reset-btn" onClick={resetUser}>Reset</button>
+                    <button type="submit" className="submit-btn">Submit</button>
                 </div>
             </form>
         </div>

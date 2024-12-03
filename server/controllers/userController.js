@@ -1,4 +1,57 @@
-const User = require('../models/User');
+const bcrypt = require('bcrypt');
+const User = require('../models/User'); // Ensure the correct path to your User model
+
+// Add a new user
+const addUser = async (req, res) => {
+    try {
+        // Destructure request body
+        const { firstName, lastName, username, email, phoneNumber, password, dob, address } = req.body;
+
+        // Check if the user already exists
+        const existingUser = await User.findOne({ email });
+        if (existingUser) {
+            return res.status(400).json({ error: 'Email already in use' });
+        }
+
+        // Hash the password
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+        // Create a new user
+        const user = new User({
+            firstName,
+            lastName,
+            username,
+            email,
+            phoneNumber,
+            password: hashedPassword,
+            dob,
+            address,
+        });
+
+        // Save the user to the database
+        const savedUser = await user.save();
+
+        res.status(201).json({
+            message: 'User created successfully',
+            user: {
+                id: savedUser._id,
+                firstName: savedUser.firstName,
+                lastName: savedUser.lastName,
+                username: savedUser.username,
+                email: savedUser.email,
+                dob: savedUser.dob,
+                address: savedUser.address,
+            },
+        });
+    } catch (error) {
+        console.error('Error while adding user:', error);
+        res.status(500).json({
+            error: 'Failed to create user',
+            details: error.message,
+        });
+    }
+};
 
 // Fetch all users
 const getUser = async (req, res) => {
@@ -8,19 +61,6 @@ const getUser = async (req, res) => {
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Failed to fetch users' });
-    }
-};
-
-// Add a new user
-const addUser = async (req, res) => {
-    try {
-        console.log('Add User Method Called');
-        const user = new User(req.body);
-        await user.save();
-        res.status(201).json({ message: 'User created successfully', user });
-    } catch (error) {
-        console.error(error);
-        res.status(400).json({ error: 'Failed to create user', details: error.message });
     }
 };
 

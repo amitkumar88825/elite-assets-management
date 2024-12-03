@@ -1,81 +1,196 @@
-.signup-container {
-    background: #ffffff;
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 20px 40px;
-    width: 100%;
-    max-width: 500px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
 }
 
-.signup-title {
+.title {
     text-align: center;
+    font-size: 1.5rem;
     color: #333;
     margin-bottom: 20px;
-    font-size: 24px;
 }
 
-.signup-form .form-group {
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
     margin-bottom: 15px;
 }
 
-.signup-form label {
+label {
     display: block;
-    font-weight: bold;
     margin-bottom: 5px;
+    font-size: 0.9rem;
     color: #555;
 }
 
-.signup-form input,
-.signup-form textarea {
+input, textarea, button {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
+    outline: none;
 }
 
-.signup-form textarea {
-    height: 100px;
+.container, .form-group {
+    overflow: hidden;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+
+textarea {
     resize: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .button-group {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
 
-.btn {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 14px;
+button {
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background 0.3s ease;
 }
 
 .cancel-btn {
-    background-color: #ff4d4d;
-    color: #fff;
+    background: #f44336;
+    color: white;
 }
 
 .cancel-btn:hover {
-    background-color: #e60000;
+    background: #d32f2f;
 }
 
 .reset-btn {
-    background-color: #ffc107;
-    color: #fff;
+    background: #f0ad4e;
+    color: white;
 }
 
 .reset-btn:hover {
-    background-color: #e0a800;
+    background: #ec971f;
 }
 
 .submit-btn {
-    background-color: #28a745;
-    color: #fff;
+    background: #007bff;
+    color: white;
 }
 
 .submit-btn:hover {
-    background-color: #218838;
+    background: #0056b3;
 }
+
+
+.login-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form .form-group {
+    margin-bottom: 15px;
+}
+
+.login-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.error-message {
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #f9f9f9;
+    box-sizing: border-box;
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
